@@ -3,10 +3,12 @@
 
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <br>
+  <br />
   <router-link to="/">Home</router-link> |
   <router-link to="/about">About</router-link>
-  <router-view></router-view>
+  <div class="container">
+    <router-view></router-view>
+  </div>
 </template>
 
 <style>

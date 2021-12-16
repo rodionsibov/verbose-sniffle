@@ -10,7 +10,7 @@
     <router-link class="hover:underline" to="/jamaica">Jamaica</router-link>
     <router-link class="hover:underline" to="/about">About</router-link>
   </div>
-  <div class="p-10">
+  <div class="mx-auto w-3/4">
     <router-view></router-view>
   </div>
 </template>

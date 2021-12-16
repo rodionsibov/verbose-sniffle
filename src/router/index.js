@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './../views/Home.vue'
 import About from './../views/About.vue'
+import Brazil from './../views/Brazil.vue'
 
 const routes = [
     {
@@ -15,7 +16,12 @@ const routes = [
         path: '/about',
         name: 'About',
         component: About
-    }
+    },
+    {
+        path: '/brazil',
+        name: 'Brazil',
+        component: Brazil
+    },
 ]
 
 const router = createRouter({
@@ -24,9 +30,9 @@ const router = createRouter({
     routes
 })
 
-// router.beforeEach((to, from, next) => {
-//     document.title = `${to.name} | Product and Cart`
-//     next()
-//   })
+router.beforeEach((to, from, next) => {
+    document.title = `${to.name} | Vue Shcool Travel App`
+    next()
+  })
 
 export default router

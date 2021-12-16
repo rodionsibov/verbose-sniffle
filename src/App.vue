@@ -2,14 +2,12 @@
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <br />
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/brazil">Brazil</router-link>
+  <div id="nav" class="bg-gray-700 text-white p-4 flex gap-4 text-sm">
+    <router-link class="hover:underline" to="/">Home</router-link>
+    <router-link class="hover:underline" to="/about">About</router-link>
+    <router-link class="hover:underline" to="/brazil">Brazil</router-link>
   </div>
-  <div class="container">
+  <div class="p-10">
     <router-view></router-view>
   </div>
 </template>
@@ -19,8 +17,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

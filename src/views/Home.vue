@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h1>Home</h1>
+    <h1>All Destinations</h1>
     <router-link
       v-for="destination in destinations"
       :key="destination.id"

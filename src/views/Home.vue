@@ -10,7 +10,7 @@
         <h2 class="mb-3">
           {{ destination.name }}
         </h2>
-        <img :src="`/images/${destination.image}`" :alt="destination.name" />
+        <img class="w-full" :src="`/images/${destination.image}`" :alt="destination.name" />
       </router-link>
     </div>
   </div>

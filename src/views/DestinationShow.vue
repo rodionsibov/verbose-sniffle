@@ -1,15 +1,19 @@
 <template>
-  <div>
+  <section>
     <h1>
       {{ destination.name }}
     </h1>
-    <div>
-      <img :src="`/images/${destination.image}`" :alt="destination.name" />
-      <p>
+    <div class="flex flex-col lg:flex-row gap-4">
+      <img
+        class="lg:w-1/2 object-cover border-8 border-white drop-shadow-xl"
+        :src="`/images/${destination.image}`"
+        :alt="destination.name"
+      />
+      <p class="">
         {{ destination.description }}
       </p>
     </div>
-  </div>
+  </section>
 </template> 
 
 <script>

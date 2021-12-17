@@ -35,12 +35,17 @@ const routes = [
         name: 'Panama',
         component: () => import('./../views/Panama.vue')
     },
+    {
+        path: '/destination/:id',
+        component: () => import('./../views/DestinationShow.vue')
+    }
 ]
 
 const router = createRouter({
     history: createWebHistory(),
     // history: createWebHistory(process.env.BASE_URL),
-    routes
+    routes,
+    // linkActiveClass: ''
 })
 
 router.beforeEach((to, from, next) => {

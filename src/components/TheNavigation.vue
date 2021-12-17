@@ -15,6 +15,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.router-link-active,
+.router-link-exact-active {
+  color: whitesmoke;
+}
 </style>

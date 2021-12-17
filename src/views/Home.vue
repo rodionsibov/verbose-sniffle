@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <h1>All Destinations</h1>
-    <div class="flex md:flex-col gap-4">
+    <div class="flex flex-col lg:flex-row gap-4">
       <router-link
         v-for="destination in destinations"
         :key="destination.id"

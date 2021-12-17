@@ -1,6 +1,6 @@
 <template>
   <TheNavigation />
-  <div class="mx-auto w-11/12 sm:w-3/5 mb-20">
+  <div class="mx-auto w-11/12 sm:w-3/5">
     <router-view></router-view>
   </div>
 </template>

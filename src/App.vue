@@ -1,7 +1,7 @@
 <template>
   <TheNavigation />
   <div class="mx-auto w-11/12 sm:w-3/5 mb-20">
-    <router-view></router-view>
+    <router-view :key="$route.path"></router-view>
   </div>
 </template>
 

@@ -1,13 +1,15 @@
 <template>
-  <div>
-    <img
-      class="hover:opacity-90 mt-4"
-      :src="`/images/${experience.image}`"
-      :alt="experience.name"
-    />
-  </div>
-  <div class="p-2 bg-gray-800 text-zinc-50 text-center text-sm tracking-wide">
-    {{ experience.name }}
+  <div class="rounded overflow-hidden mt-4">
+      <div>
+        <img
+          class=""
+          :src="`/images/${experience.image}`"
+          :alt="experience.name"
+        />
+      </div>
+      <div class="p-2 bg-gray-800 text-zinc-50 text-center text-sm tracking-wide">
+        {{ experience.name }}
+      </div>
   </div>
 </template>
 

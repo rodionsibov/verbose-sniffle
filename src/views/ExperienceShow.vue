@@ -1,5 +1,6 @@
 <template>
-  <div class="text-3xl">ExperienceShow page</div>
+  <h2>Experience show</h2>
+  <p></p>
 </template>
 
 <script>

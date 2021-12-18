@@ -1,12 +1,13 @@
 <template>
-  <div class="font-bold uppercase my-3">
-    {{ experience.name }}
-  </div>
   <div>
-    <img class="mb-3" :src="`/images/${experience.image}`" :alt="experience.name" />
+    <img
+      class="hover:opacity-90 mt-4"
+      :src="`/images/${experience.image}`"
+      :alt="experience.name"
+    />
   </div>
-  <div class="text-sm">
-    {{ experience.description }}
+  <div class="p-2 bg-gray-800 text-zinc-50 text-center text-sm tracking-wide">
+    {{ experience.name }}
   </div>
 </template>
 

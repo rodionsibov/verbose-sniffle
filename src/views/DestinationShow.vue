@@ -17,7 +17,7 @@
   </section>
   <section class="mt-10">
     <h2>Top Experiences in {{ destination.name }}</h2>
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-4 gap-5">
       <router-link
         v-for="experience in destination.experiences"
         :key="experience.slug"
@@ -30,7 +30,9 @@
       </router-link>
     </div>
   </section>
-  <router-view></router-view>
+  <section class="mt-10">
+    <router-view></router-view>
+  </section>
 </template> 
 
 <script>

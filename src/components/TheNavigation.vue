@@ -9,7 +9,7 @@
       class="hover:underline"
       v-for="destination in destinations"
       :key="destination.id"
-      :to="{ name: 'Destination', params: { id: destination.id } }"
+      :to="{ name: 'Destination', params: { id: destination.id, slug: destination.slug } }"
     >
       {{ destination.name }}
     </router-link>

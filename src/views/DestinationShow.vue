@@ -30,6 +30,10 @@ export default {
       );
     },
   },
+  async created() {
+    const res = await fetch(`https://travel-dummy-api.netlify.app/${this.$route.params.slug}`)
+    this.destination = await res.json()
+  }
 };
 </script>
 

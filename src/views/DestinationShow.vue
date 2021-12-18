@@ -53,9 +53,9 @@ export default {
     ExperienceCard,
     GoBack,
   },
-  props: {
-    id: { type: Number, required: true },
-  },
+  // props: {
+  //   id: { type: Number, required: true },
+  // },
   data() {
     return {
       destination: null,

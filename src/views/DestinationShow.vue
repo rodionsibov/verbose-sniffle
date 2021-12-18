@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-if="destination">
     <h1>
       {{ destination.name }}
     </h1>
@@ -20,20 +20,26 @@
 import sourceData from "./../data.json";
 
 export default {
-  computed: {
-    destinationId() {
-      return parseInt(this.$route.params.id);
-    },
-    destination() {
-      return sourceData.destinations.find(
-        (destination) => destination.id === this.destinationId
-      );
-    },
+  data() {
+    return {
+      destination: null,
+    };
   },
   async created() {
-    const res = await fetch(`https://travel-dummy-api.netlify.app/${this.$route.params.slug}`)
-    this.destination = await res.json()
-  }
+    const res = await fetch(
+      `https://travel-dummy-api.netlify.app/${this.$route.params.slug}`
+    );
+    this.destination = await res.json();
+    this.$watch(
+      () => this.$route.params,
+      async () => {
+        const res = await fetch(
+          `https://travel-dummy-api.netlify.app/${this.$route.params.slug}`
+        );
+        this.destination = await res.json();
+      }
+    );
+  },
 };
 </script>
 

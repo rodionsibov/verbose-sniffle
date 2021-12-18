@@ -25,19 +25,19 @@ export default {
       destination: null,
     };
   },
+  methods: {
+    async initData() {
+      const res = await fetch(
+        `https://travel-dummy-api.netlify.app/${this.$route.params.slug}`
+      );
+      this.destination = await res.json();
+    },
+  },
   async created() {
-    const res = await fetch(
-      `https://travel-dummy-api.netlify.app/${this.$route.params.slug}`
-    );
-    this.destination = await res.json();
+    this.initData();
     this.$watch(
       () => this.$route.params,
-      async () => {
-        const res = await fetch(
-          `https://travel-dummy-api.netlify.app/${this.$route.params.slug}`
-        );
-        this.destination = await res.json();
-      }
+      async () => this.initData
     );
   },
 };

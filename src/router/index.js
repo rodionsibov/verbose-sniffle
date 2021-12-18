@@ -15,7 +15,16 @@ const routes = [
         name: 'Destination',
         component: () => import('./../views/DestinationShow.vue'),
         props: true,
-    }
+        children: [
+            {
+                path: '/destination/:id/:slug/:experienceSlug',
+                name: 'ExperienceShow',
+                component: () => import('./../views/ExperienceShow.vue'),
+                props: route => ({ ...route.params, id: parseInt(route.params.id) }),
+            }
+        ]
+    },
+    
 ]
 
 const router = createRouter({

@@ -20,6 +20,9 @@
 import sourceData from "./../data.json";
 
 export default {
+  props: {
+    id: { type: String, required: true },
+  },
   data() {
     return {
       destination: null,

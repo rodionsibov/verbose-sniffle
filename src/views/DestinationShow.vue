@@ -6,7 +6,14 @@
     <GoBack />
     <div class="flex flex-col lg:flex-row gap-7">
       <img
-        class="lg:w-1/2 object-cover border-8 border-white drop-shadow-xl hover:scale-105 transition"
+        class="
+          lg:w-1/2
+          object-cover
+          border-8 border-white
+          drop-shadow-md
+          hover:scale-105 hover:drop-shadow-xl
+          transition
+        "
         :src="`/images/${destination.image}`"
         :alt="destination.name"
       />
@@ -18,7 +25,8 @@
   <section class="mt-10">
     <h2>Top Experiences in {{ destination.name }}</h2>
     <div class="grid md:grid-cols-4 gap-5">
-      <router-link class="hover:opacity-90"
+      <router-link
+        class="hover:opacity-90"
         v-for="experience in destination.experiences"
         :key="experience.slug"
         :to="{

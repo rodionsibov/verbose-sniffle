@@ -15,9 +15,9 @@
       </p>
     </div>
   </section>
-  <section>
+  <section class="mt-10">
     <h2>Top Experiences in {{ destination.name }}</h2>
-    <div>
+    <div class="grid grid-cols-3 gap-4">
       <router-link
         v-for="experience in destination.experiences"
         :key="experience.slug"

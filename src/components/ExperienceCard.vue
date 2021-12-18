@@ -1,6 +1,12 @@
 <template>
-  <div class="text-6xl my-10 font-bold text-red-500">
-    Top Experiences in {{ id }}
+  <div class="font-bold uppercase my-3">
+    {{ experience.name }}
+  </div>
+  <div>
+    <img class="mb-3" :src="`/images/${experience.image}`" :alt="experience.name" />
+  </div>
+  <div class="text-sm">
+    {{ experience.description }}
   </div>
 </template>
 
@@ -9,17 +15,8 @@ import sourceData from "./../data.json";
 
 export default {
   props: {
-    id: { type: String, required: true },
+    experience: { type: Object, required: true },
   },
-  data() {
-    return {
-    };
-  },
-  computed: {
-      experiences() {
-          return sourceData.destinations.find(destination => destination.id === this.id )
-      }
-  }
 };
 </script>
 

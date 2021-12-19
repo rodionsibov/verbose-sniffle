@@ -1,6 +1,8 @@
 <template>
-  <h2>Experience show</h2>
-  <p></p>
+  <h2>Experience Show</h2>
+  <p>
+    {{ description }}
+  </p>
 </template>
 
 <script>
@@ -10,12 +12,16 @@ export default {
   props: {
     id: { type: Number, required: true },
   },
-  
+
   computed: {
-      dest() {
-          return sourceData.destinations.find(destination => destination.id === this.id)
-      }
-  }
+    description() {
+      return sourceData.destinations
+        .find((destination) => destination.id === this.id)
+        .experiences.filter(
+          (item) => item.slug === this.$route.params.experienceSlug
+        )[0].description;
+    },
+  },
 };
 </script>
 

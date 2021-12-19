@@ -1,46 +1,48 @@
 <template>
-  <section v-if="destination">
-    <h1>
-      {{ destination.name }}
-    </h1>
-    <GoBack />
-    <div class="flex flex-col lg:flex-row gap-7">
-      <img
-        class="
-          lg:w-1/2
-          object-cover
-          border-8 border-white
-          drop-shadow-md
-          hover:scale-105 hover:drop-shadow-xl
-          transition
-        "
-        :src="`/images/${destination.image}`"
-        :alt="destination.name"
-      />
-      <p class="">
-        {{ destination.description }}
-      </p>
-    </div>
-  </section>
-  <section class="mt-10">
-    <h2>Top Experiences in {{ destination.name }}</h2>
-    <div class="grid md:grid-cols-4 gap-5">
-      <router-link
-        class="hover:opacity-90"
-        v-for="experience in destination.experiences"
-        :key="experience.slug"
-        :to="{
-          name: 'ExperienceShow',
-          params: { experienceSlug: experience.slug },
-        }"
-      >
-        <ExperienceCard :experience="experience" />
-      </router-link>
-    </div>
-  </section>
-  <section class="mt-10">
-    <router-view></router-view>
-  </section>
+  <div>
+    <section v-if="destination">
+      <h1>
+        {{ destination.name }}
+      </h1>
+      <GoBack />
+      <div class="flex flex-col lg:flex-row gap-7">
+        <img
+          class="
+            lg:w-1/2
+            object-cover
+            border-8 border-white
+            drop-shadow-md
+            hover:scale-105 hover:drop-shadow-xl
+            transition
+          "
+          :src="`/images/${destination.image}`"
+          :alt="destination.name"
+        />
+        <p class="">
+          {{ destination.description }}
+        </p>
+      </div>
+    </section>
+    <section class="mt-10" v-if="destination">
+      <h2>Top Experiences in {{ destination.name }}</h2>
+      <div class="grid md:grid-cols-4 gap-5">
+        <router-link
+          class="hover:opacity-90"
+          v-for="experience in destination.experiences"
+          :key="experience.slug"
+          :to="{
+            name: 'ExperienceShow',
+            params: { experienceSlug: experience.slug },
+          }"
+        >
+          <ExperienceCard :experience="experience" />
+        </router-link>
+      </div>
+    </section>
+    <section class="mt-10">
+      <router-view></router-view>
+    </section>
+  </div>
 </template> 
 
 <script>
@@ -53,9 +55,9 @@ export default {
     ExperienceCard,
     GoBack,
   },
-  // props: {
-  //   id: { type: Number, required: true },
-  // },
+  props: {
+    id: { type: Number, required: true },
+  },
   data() {
     return {
       destination: null,

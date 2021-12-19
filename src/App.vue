@@ -2,7 +2,7 @@
   <TheNavigation />
   <div class="mx-auto w-11/12 sm:w-3/5 mb-20">
     <router-view :key="$route.path" v-slot="{ Component }">
-      <transition name="slide" mode="out-in">
+      <transition name="fade" mode="out-in">
         <component :is="Component" :key="$route.path"></component>
       </transition>
     </router-view>
@@ -20,14 +20,13 @@ export default {
 </script>
 
 <style>
-.slide-enter-active,
-.slide-leave-active {
-  transition: opacity 1s, transform 1s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
 }
 
-.slide-enter-from,
-.slide-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
-  transform: translateX(-30%);
 }
 </style>

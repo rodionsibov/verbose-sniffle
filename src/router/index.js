@@ -19,7 +19,12 @@ const routes = [
         beforeEnter(to, from) {
             const exists = sourceData.destinations.find(destination => destination.id === parseInt(to.params.id))
             if (!exists) {
-                return { name: 'NotFound' }
+                return {
+                    name: 'NotFound',
+                    params: { pathMatch: to.path.split('/').slice(1) },
+                    query: to.query,
+                    hash: to.hash
+                }
             }
         },
         children: [

@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-28">
+  <div class="mt-2">
     <GoBack />
     <section>
       <h1>

@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <section v-if="destination">
+  <div class="mt-28">
+    <GoBack />
+    <section>
       <h1>
         {{ destination.name }}
       </h1>
-      <GoBack />
       <div class="flex flex-col lg:flex-row gap-7">
         <img
           class="
@@ -23,7 +23,7 @@
         </p>
       </div>
     </section>
-    <section class="mt-10" v-if="destination">
+    <section class="mt-10">
       <h2>Top Experiences in {{ destination.name }}</h2>
       <div class="grid md:grid-cols-4 gap-5">
         <router-link
@@ -60,19 +60,24 @@ export default {
   },
   data() {
     return {
-      destination: null,
+      destination: this.about(),
     };
   },
   methods: {
-    async initData() {
-      const res = await fetch(
-        `https://travel-dummy-api.netlify.app/${this.$route.params.slug}`
+    about() {
+      return sourceData.destinations.find(
+        (destination) => destination.id === this.id
       );
-      this.destination = await res.json();
     },
+    // async initData() {
+    //   const res = await fetch(
+    //     `https://travel-dummy-api.netlify.app/${this.$route.params.slug}`
+    //   );
+    //   this.destination = await res.json();
+    // },
   },
   async created() {
-    this.initData();
+    // this.initData();
   },
 };
 </script>

@@ -1,5 +1,8 @@
 <template>
-  <button @click="$router.back()" class="flex text-sm opacity-30 mb-5 hover:opacity-70 sticky top-20 z-10 bg-white p-2">
+  <button
+    @click="$router.back()"
+    class="flex text-sm text-gray-400 hover:text-gray-600"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="h-6 w-6"

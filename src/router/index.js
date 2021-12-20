@@ -12,6 +12,14 @@ const routes = [
         }
     },
     {
+        path: '/protected',
+        name: 'Protected',
+        component: () => import('./../views/Protected.vue'),
+        meta: {
+            requiresAuth: true,
+        }
+    },
+    {
         path: '/destination/:id/:slug',
         name: 'Destination',
         component: () => import('./../views/DestinationShow.vue'),
@@ -53,7 +61,7 @@ const router = createRouter({
     scrollBehavior(to, from, savedPosition) {
         return savedPosition || new Promise((resolve) => {
             setTimeout(() => {
-                resolve({ top: 0 })
+                resolve({ top: 0, behavior: 'smooth' })
             }, 300)
         })
         // return savedPosition || { top: 0 }
@@ -64,6 +72,9 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     document.title = `${to.name} | Vue Shcool Travel App`
     next()
+    if(to.meta.requiresAuth){
+        // need to login if not already logged in
+    }
 })
 
 export default router

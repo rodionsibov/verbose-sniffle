@@ -2,7 +2,7 @@
   <div
     class="bg-gray-700 text-gray-400 p-5 md:p-0 flex flex-col items-center gap-4 border-b-4 w-full md:flex-row md:fixed top-0 z-10"
   >
-  <router-link to="/" class="text-xl font-bold text-black md:text-white mb-8 md:mb-0 md:mr-8 fixed md:relative md:bg-none top-0 z-10 p-3 w-full text-center md:text-left md:w-auto">
+  <router-link to="/" class="text-xl font-bold text-black md:text-white bg-white mb-8 md:mb-0 md:mr-8 fixed md:relative md:bg-transparent top-0 z-10 p-3 w-full text-center md:text-left md:w-auto">
     Vue School Travel App
   </router-link>
     <router-link

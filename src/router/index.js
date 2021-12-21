@@ -77,9 +77,9 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     document.title = `${to.name} | Vue Shcool Travel App`
     next()
-    if(to.meta.requiresAuth && !window.user){
+    if (to.meta.requiresAuth && !window.user) {
         // need to login if not already logged in
-        return {name: 'Login'}
+        return { name: 'Login' }
     }
 })
 

@@ -17,6 +17,14 @@ const routes = [
         component: () => import('./../views/Login.vue'),
     },
     {
+        path: '/invoices',
+        name: 'Invoices',
+        component: () => import('./../views/Invoices.vue'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
         path: '/protected',
         name: 'Protected',
         component: () => import('./../views/Protected.vue'),
@@ -79,7 +87,7 @@ router.beforeEach((to, from, next) => {
     next()
     if (to.meta.requiresAuth && !window.user) {
         // need to login if not already logged in
-        return { name: 'Login' }
+        return { name: 'Login', query: { redirect: to.fullPath } }
     }
 })
 

@@ -12,6 +12,11 @@ const routes = [
         }
     },
     {
+        path: '/login',
+        name: 'Login',
+        component: () => import('./../views/Login.vue'),
+    },
+    {
         path: '/protected',
         name: 'Protected',
         component: () => import('./../views/Protected.vue'),
@@ -72,8 +77,9 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     document.title = `${to.name} | Vue Shcool Travel App`
     next()
-    if(to.meta.requiresAuth){
+    if(to.meta.requiresAuth && !window.user){
         // need to login if not already logged in
+        return {name: 'Login'}
     }
 })
 
